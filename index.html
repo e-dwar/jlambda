@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jlambda</title>
+        <meta charset="utf-8" />
+    </head>
+    <body style="font-size:16px">
+        <script src="https://rawgit.com/e-dwar/miniconsole/master/miniconsole.js" type="text/javascript"></script>
+        <script src="minit.js" type="text/javascript"></script>
+        <script src="main.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            (function (lines) {
+                var line;
+                while (lines.length) {
+                    line = lines.shift().split(" ");
+                    mini[line.shift()](line.join(" "));
+                }
+            })([
+                "send vrai(true, false)",
+                "send faux(true, false)",
+                "send non(vrai)(true, false)",
+                "send non(faux)(true, false)",
+                "info Table de vérité du \"et\":",
+                "send et(vrai, vrai)(true, false)",
+                "send et(vrai, faux)(true, false)",
+                "send et(faux, vrai)(true, false)",
+                "send et(faux, faux)(true, false)"
+            ]);
+        </script>
+    </body>
+</html>
+
